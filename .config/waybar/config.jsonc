@@ -1,0 +1,125 @@
+{
+  "layer": "top",
+  "positio": "top",
+  "height": 28,
+  "width": -1,
+  "margin-top": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "spacing": 3,
+
+  "modules-left": [
+    "clock",
+    "custom/seperator",
+    "mango/workspaces",
+    "mango/window",
+  ],
+  "modules-center": [
+    "cffi/mediaplayer"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "temperature",
+    "custom/seperator",
+ //   "network",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "tray",
+    "custom/seperator",
+    "mango/language",
+    "mango/layout",
+  ],
+  "mango/workspaces": {
+    "format": "{icon}",
+    "hide-empty": true,
+    "on-click": "activate",
+    "format-icons": {
+      "1": "I",
+      "2": "II",
+      "3": "III",
+      "4": "IV",
+      "5": "V",
+      "6": "VI",
+      "7": "VII",
+      "8": "VIII",
+      "9": "IX",
+    }
+  },
+  "mango/window": {
+    "format": "{}",
+  },
+  "custom/seperator": {
+    "format": "|",
+    "tooltip": false
+  },
+  "temperature": {
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [""]
+  },
+  "backlight": {
+   // "device": "acpi_video1",
+    "format": "{percent}% {icon}",
+    "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+  },
+  "memory": {
+    "interval": 1,
+    "format": "{used:0.1f}GiB ({percentage}%)"
+  },
+  "battery": {
+	"bat": "BAT0",
+	"interval": 60,
+	"states": {
+		"warning": 30,
+		"critical": 15
+	},
+	"events": {
+		"on-discharging-warning": "notify-send -u normal 'Low Battery'",
+		"on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+		"on-charging-100": "notify-send -u normal 'Battery Full!'",
+		"on-discharging": "notify-send -u normal 'Power Switch' Discharging",
+		"on-charging": "notify-send -u normal 'Power Switch' Charging'"
+	},
+	"format": "{capacity}% {icon}",
+	"format-icons": ["", "", "", "", ""],
+	"max-length": 25
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 7,
+    "show-passive-items": true
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 3,
+  },
+  "cffi/mediaplayer": {
+    "module_path": "/home/haid/.config/waybar/scripts/waybar_mediaplayer.so",
+    "scroll-title": true,
+    "scroll-interval": 200,
+    "scroll-before-timeout": 5,
+    "scroll-step": 2,
+    "tooltip": true,
+    "tooltip-image-height": 300,
+    "tooltip-image-width": 300,
+    "btn-play-icon": "",
+    "btn-pause-icon": "",
+    "btn-prev-icon": "",
+    "btn-next-icon": ""
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "\uf2e2e Muted",
+    "format-icons": {
+      "default": [
+        "\uf026",
+        "\uf027",
+        "\uf028"
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+}
+    
