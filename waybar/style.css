@@ -1,11 +1,14 @@
 /* CSS for default things */
-
+* {
+  color: white;
+}
 window#waybar {
   background-color: rgba(0, 5, 0, 0.5);
   border-radius: 8px;
 
 }
 #workspaces {
+  font-family: "Monaspace Xenon NF", auto, auto;
   background-color: transparent;
   color: #dfdfdf;
 }
@@ -84,7 +87,7 @@ window#waybar {
 }
 
 /* green underlines */
-#cpu, #temperature, #memory, #battery, #backlight, #pulseaudio {
+#cpu, #temperature, #memory, #battery, #backlight {
   border-bottom: 3px solid rgba(141, 200, 131, 1);
   border-radius: 8px;
 }
@@ -127,7 +130,14 @@ window#waybar {
   font-family: "Monaspace Neon NF", auto, auto;
   font-size: 12px;
   background-color: transparent;
-  color: #dfdfdf;
+  color: #000000;
+}
+
+#tray menu {
+  background-color: #2D494D;
+  /* #2D494D */
+  border-radius: 8px;
+  border-bottom: 3px solid rgba(141, 200, 131, 1);
 }
 
 #memory {
